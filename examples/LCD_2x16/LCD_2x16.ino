@@ -11,9 +11,9 @@
 #define COLS 16
 
 HardwareSerial mySerial = Serial1;
-Adafruit_GPS GPS(&mySerial);
+//Adafruit_GPS GPS(&mySerial);
 
-ParallaxLCD lcd(2,ROWS,COLS); // desired pin, rows, cols
+ParallaxLCD lcd(&mySerial,ROWS,COLS); // desired pin, rows, cols
 
 
 /**

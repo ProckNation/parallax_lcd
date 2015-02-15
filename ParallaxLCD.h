@@ -75,7 +75,7 @@ THE SOFTWARE.
 
 class ParallaxLCD : public SoftwareSerial {
 public:
-   ParallaxLCD ( int pin, int numRows, int numCols );
+   ParallaxLCD ( HardwareSerial *ser, int numRows, int numCols );
    void setup ( boolean startEmpty=true ); 
 
    void on ();
