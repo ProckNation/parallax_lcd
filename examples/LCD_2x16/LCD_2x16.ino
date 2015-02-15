@@ -10,7 +10,11 @@
 #define ROWS 2
 #define COLS 16
 
+HardwareSerial mySerial = Serial1;
+Adafruit_GPS GPS(&mySerial);
+
 ParallaxLCD lcd(2,ROWS,COLS); // desired pin, rows, cols
+
 
 /**
  * Initialize the 2-dimensional custom character byte array.

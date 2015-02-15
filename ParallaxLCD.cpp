@@ -47,6 +47,7 @@ THE SOFTWARE.
 #include <Arduino.h>
 
 #include <SoftwareSerial.h>
+#include <HardwareSerial.h>
 #include "ParallaxLCD.h"
 
 #define PINOUT      0
@@ -59,15 +60,15 @@ THE SOFTWARE.
 // The 16 column display just doesn't show the last 4 columns
 #define COL_SIZE    20
 
-ParallaxLCD::ParallaxLCD ( int pin, int numRows, int numCols) : SoftwareSerial(pin,pin) {
-	_bv[PINOUT]=pin;
+ParallaxLCD::ParallaxLCD (HardwareSerial *ser, int numRows, int numCols) : HardwareSerial(ser) {
+	//_bv[PINOUT]=pin;
 	_bv[BOUNCE]=10;
 	_bv[NUMROWS]=numRows;
 	_bv[NUMCOLS]=numCols;
 }
 
 void ParallaxLCD::setup(boolean startEmpty ) {
-	pinMode(_bv[PINOUT], OUTPUT);
+	//pinMode(_bv[PINOUT], OUTPUT);
 	delay(_bv[BOUNCE]);
 	begin(19200);
 	delay(_bv[BOUNCE]);
